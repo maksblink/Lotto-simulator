@@ -3,6 +3,13 @@ import random
 numbers = []
 n = 1
 while n < 7:
+    """Get 6 different numbers between 1 and 49.
+    
+    Try until user give all proper number.
+
+    :rtype: int
+    :given list with 6 numbers provide by user
+    """
     try:
         numbers.append(input("Enter " + str(n) + " number: "))
         numbers[-1] = int(numbers[-1])
@@ -25,15 +32,23 @@ while n < 7:
             break
         else:
             pass
+"""Print given numbers with ascending order.
 
+:param list numbers: list of numbers
+"""
 numbers.sort()
 print("Your numbers are: ", ', '.join([str(i) for i in numbers]))
+"""Chose 6 random numbers.
 
+:rtype: list
+:list with 6 random numbers
+"""
 lotto = list(range(1, 50))
 random.shuffle(lotto)
 lotto = lotto[0:6]
 lotto.sort()
 print("Lotto numbers are: ", ', '.join([str(i) for i in lotto]))
+"""Main function of program."""
 count = 0
 for i in numbers:
     if i in lotto:
